@@ -1,0 +1,16 @@
+[Unit]
+Description=Systemd Test Daemon
+
+[Service]
+ExecStart=/root/chain.sh
+
+WorkingDirectory=/root/
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=chain
+User=root
+Group=root
+
+
+[Install]
+WantedBy=multi-user.target
