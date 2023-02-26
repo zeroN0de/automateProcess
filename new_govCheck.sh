@@ -1,7 +1,7 @@
 #!/bin/bash --login
 
 #시간변수선언
-today="`date '+%Y_%m_%d %H:%M' -d '9 hour'`"
+today="`date '+%Y_%m_%d %H:%M:%S UTC'`"
 
 # checking gov
 $(which atreidesd) q gov proposals > ~/bot/atreidesGOV.txt
@@ -11,8 +11,13 @@ if [ "$atr" == "$atr2" ]; then
     echo ""$today" not exist ATR NEW GOV"
 
 elif [ "$atr" != "$atr2" ]; then
-    curl -k https://api.telegram.org/bot{botToken}:AAHrwdb-Us2CItP4ufAl8LmK4r_MFppaNRw/sendMessage -d "chat_id={chatID}" --data-urlencode "text= $today **ATR 거버넌스** "http://pingpub-goa.s3-website.ap-northeast-2.amazonaws.com/atreides/gov""
-    cat ~/bot/atreidesGOV.txt > ~/bot/atreidesGOV2.txt
+    curl -k https://api.telegram.org/bot{botToken}:AAHrwdb-Us2CItP4ufAl8LmK4r_MFppaNRw/sendMessage -d "chat_id={chatID}" --data-urlencode "text= **$today**
+Governance checking every 10 min
+You can check new ATR GOV
+"https://explorer.runeterra.info/atreides/gov""
+        sleep 2
+        cat /home/ubuntu/bot/atreidesGOV.txt > /home/ubuntu/bot/atreidesGOV2.txt
+        sleep 2
 fi
 
 $(which harkonnend) q gov proposals > ~/bot/harkonnenGOV.txt
@@ -22,8 +27,13 @@ if [ "$har" == "$har2" ]; then
     echo ""$today" not exist HAR NEW GOV"
 
 elif [ "$har" != "$har2" ]; then
-    curl -k https://api.telegram.org/bot{botToken}:AAHrwdb-Us2CItP4ufAl8LmK4r_MFppaNRw/sendMessage -d "chat_id={chatID}" --data-urlencode "text= $today **HAR 거버넌스** "http://pingpub-goa.s3-website.ap-northeast-2.amazonaws.com/harkonnen/gov""
-    cat ~/bot/harkonnenGOV.txt > ~/bot/harkonnenGOV2.txt
+    curl -k https://api.telegram.org/bot{botToken}:AAHrwdb-Us2CItP4ufAl8LmK4r_MFppaNRw/sendMessage -d "chat_id={chatID}" --data-urlencode "text= **$today**
+Governance checking every 10 min
+You can check new HAR GOV
+"https://explorer.runeterra.info/harkonnen/gov""
+        sleep 2
+        cat /home/ubuntu/bot/harkonnenGOV.txt > /home/ubuntu/bot/harkonnenGOV2.txt
+        sleep 2
 fi
 
 $(which corrinod) q gov proposals > ~/bot/corrinoGOV.txt
@@ -33,8 +43,13 @@ if [ "$cor" == "$cor2" ]; then
     echo ""$today" not exist COR NEW GOV"
 
 elif [ "$cor" != "$cor2" ]; then
-    curl -k https://api.telegram.org/bot{botToken}:AAHrwdb-Us2CItP4ufAl8LmK4r_MFppaNRw/sendMessage -d "chat_id={chatID}" --data-urlencode "text= $today **COR 거버넌스** "http://pingpub-goa.s3-website.ap-northeast-2.amazonaws.com/corrino/gov""
-    cat ~/bot/corrinoGOV.txt > ~/bot/corrinoGOV2.txt
+    curl -k https://api.telegram.org/bot{botToken}:AAHrwdb-Us2CItP4ufAl8LmK4r_MFppaNRw/sendMessage -d "chat_id={chatID}" --data-urlencode "text= **$today**
+Governance checking every 10 min
+You can check new COR GOV
+"https://explorer.runeterra.info/corrino/gov""
+        sleep 2
+        cat /home/ubuntu/bot/corrinoGOV.txt > /home/ubuntu/bot/corrinoGOV2.txt
+        sleep 2
 fi
 
 $(which ordosd) q gov proposals > ~/bot/ordosGOV.txt
@@ -44,6 +59,11 @@ if [ "$ord" == "$ord2" ]; then
     echo ""$today" not exist ORD NEW GOV"
 
 elif [ "$ord" != "$ord2" ]; then
-    curl -k https://api.telegram.org/bot{botToken}:AAHrwdb-Us2CItP4ufAl8LmK4r_MFppaNRw/sendMessage -d "chat_id={chatID}" --data-urlencode "text= $today **ORD 거버넌스** "http://pingpub-goa.s3-website.ap-northeast-2.amazonaws.com/ordos/gov""
-    cat ~/bot/ordosGOV.txt > ~/bot/ordosGOV2.txt
+    curl -k https://api.telegram.org/bot{botToken}:AAHrwdb-Us2CItP4ufAl8LmK4r_MFppaNRw/sendMessage -d "chat_id={chatID}" --data-urlencode "text= **$today**
+Governance checking every 10 min
+You can check new ORD GOV
+"https://explorer.runeterra.info/ordos/gov""
+        sleep 2
+        cat /home/ubuntu/bot/ordosGOV.txt > /home/ubuntu/bot/ordosGOV2.txt
+        sleep 2
 fi
