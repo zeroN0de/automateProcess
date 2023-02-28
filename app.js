@@ -47,9 +47,10 @@ async function atrAPR() {
 
       //TG params
       const cardTG = {
-        chat_id: `${process.env.TG_CHAT_ID}`,
+        chat_id: process.env.TG_CHAT_ID,
         photo: "https://station-assets.terra.money/img/coins/Atreides.png",
-        caption: `*Atreides' APR ranking changed* \ndestBlockchain : *${atrData.substr(19, 8)}*\nAsset : *${atrData.substr(52, 4)}*\nAPR : *${atrData.slice(63, atrData.length - 8)}%*`,
+        caption: `*Test MESSAGE*\n*Atreides' APR ranking changed* \ndestBlockchain : *${atrData.substr(19, 8)}*\nAsset : *${atrData.substr(52, 4)}*\nAPR : *${atrData.slice(63, atrData.length - 8)}%*`,
+
         parse_mode: "Markdown",
         reply_markup: JSON.stringify({
           inline_keyboard: [
@@ -133,7 +134,7 @@ async function corAPR() {
       const cardTG = {
         chat_id: `${process.env.TG_CHAT_ID}`,
         photo: "https://station-assets.terra.money/img/coins/Corrino.png",
-        caption: `*Corrino' APR ranking changed* \ndestBlockchain : *${corData.substr(19, 7)}*\nAsset : *${corData.substr(51, 4)}*\nAPR : *${corData.slice(63, corData.length - 8)}%*`,
+        caption: `*Test MESSAGE*\n*Corrino' APR ranking changed* \ndestBlockchain : *${corData.substr(19, 7)}*\nAsset : *${corData.substr(51, 4)}*\nAPR : *${corData.slice(63, corData.length - 8)}%*`,
         parse_mode: "Markdown",
         reply_markup: JSON.stringify({
           inline_keyboard: [
@@ -216,7 +217,7 @@ async function harAPR() {
       const cardTG = {
         chat_id: `${process.env.TG_CHAT_ID}`,
         photo: "https://explorer.runeterra.info/logos/harkonnen.png",
-        caption: `*Harkonnen' APR ranking changed* \ndestBlockchain : *${harData.substr(19, 9)}*\nAsset : *${harData.substr(53, 4)}*\nAPR : *${harData.slice(65, harData.length - 8)}%*`,
+        caption: `*TEST MESSAGE*\n*Harkonnen' APR ranking changed* \ndestBlockchain : *${harData.substr(19, 9)}*\nAsset : *${harData.substr(53, 4)}*\nAPR : *${harData.slice(65, harData.length - 8)}%*`,
         parse_mode: "Markdown",
         reply_markup: JSON.stringify({
           inline_keyboard: [
@@ -299,7 +300,7 @@ async function ordAPR() {
       const cardTG = {
         chat_id: `${process.env.TG_CHAT_ID}`,
         photo: "https://explorer.runeterra.info/logos/Ordos.png",
-        caption: `*Ordos' APR ranking changed* \ndestBlockchain : *${ordData.substr(19, 5)}*\nAsset : *${ordData.substr(49, 4)}*\nAPR : *${Number(ordData.slice(61, ordData.length - 8).toLocaleString("en-us"))}%*`,
+        caption: `*Test MESSAGE*\n*Ordos' APR ranking changed* \ndestBlockchain : *${ordData.substr(19, 5)}*\nAsset : *${ordData.substr(49, 4)}*\nAPR : *${Number(ordData.slice(61, ordData.length - 8).toLocaleString("en-us"))}%*`,
         parse_mode: "Markdown",
         reply_markup: JSON.stringify({
           inline_keyboard: [
@@ -335,12 +336,11 @@ async function ordAPR() {
   }
 }
 
+//함수실행
 async function total() {
   await atrAPR();
   await corAPR();
   await harAPR();
   await ordAPR();
 }
-//함수실행
-
 total();
